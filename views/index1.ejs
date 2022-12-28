@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello EJS</h1>
+    <p>ชื่อ <b><%= name %></b></p>
+    <p>อายุ <%= age %></p>
+    <p>ที่อยู่</p>
+    <%- Address %>
+    <hr />
+
+    <% if(age>=18) {%>
+    <h1>Pass</h1>
+    <% } else {%>
+    <h1>Not Pass</h1>
+    <% } %>
+    <hr />
+
+    <% for(i=0;i<=10;i++) { %>
+    <p>NUMBER : <%= i %></p>
+    <% } %>
+    <hr />
+
+    <p><%= price %></p>
+    <ol>
+      <% for(index in price) { %>
+      <li><%= price[index] %></li>
+      <% } %>
+    </ol>
+    <hr />
+
+    <p><%= products %></p>
+    <% Object.values(products).forEach(function(item){ %>
+    <img src="<%= item.image %>" />
+    <p>product: <%= item.name %></p>
+    <p>price: <%= item.price %> Bath</p>
+    <hr />
+    <% }) %>
+  </body>
+</html>
